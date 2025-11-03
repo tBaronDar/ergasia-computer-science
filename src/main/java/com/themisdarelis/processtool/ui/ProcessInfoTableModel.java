@@ -37,4 +37,10 @@ public class ProcessInfoTableModel extends AbstractTableModel {
             default: return null;
         }
     }
+
+    public void refreshData(List<ProcessInfo> newProcesses) {
+        processes.clear();
+        processes.addAll(newProcesses);
+        fireTableDataChanged();
+    }
 }
