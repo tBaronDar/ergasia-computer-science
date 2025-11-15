@@ -16,7 +16,7 @@ java -jar target/processtool.jar
 
 Εαν θελετε να το κανετε μεσω κονσολας και οχι απο το VSCode:
 
-1. Για "ξερω"compile:
+1. Για "ξερό" compile:
 
 ```bash
 mvn compile
@@ -38,6 +38,6 @@ mvn clean package
 java -jar target/processtool-0.2.jar
 ```
 
-**Προσοχη** στο "-0.2" η εκδοση μπορει να αλλαξει.
+**Προσοχη** στο "-0.2" η εκδοση μπορει να αλλαξει. Δειτε μέσα στο /target για το ακριβές όνομα.
 
-Η περιγραφη της εφαρμογής βρισκεται [εδώ](https://github.com/tBaronDar/ergsia-computer-science/blob/main/README.md).
+Η περιγραφη της εφαρμογής βρισκεται [εδώ](https://github.com/tBaronDar/ergsia-computer-science/blob/main/ergasia-doc.md).
