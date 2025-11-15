@@ -31,11 +31,10 @@ public class MainPanel extends JPanel {
             if (!input.isEmpty()) {
                 try {
                     ProcessManager.startProcess(input);
-                    // JOptionPane.showMessageDialog(this, "Process started: " + input);
-
                     textInput.setText("");
                     var newList = ProcessManager.getCurrentProcesses();
                     tableModel.refreshData(newList);
+                    JOptionPane.showMessageDialog(this, "Process started: " + input);
 
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(this, "Error starting process: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -48,6 +47,24 @@ public class MainPanel extends JPanel {
 
         var killButton=new JButton("Kill Process");
         killButton.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        killButton.addActionListener(e -> {
+            int selectedRow = processTable.getSelectedRow();
+            if (selectedRow != -1) {
+                long pid = (long) tableModel.getValueAt(selectedRow, 0);
+                try {
+                    ProcessManager.killProcess(pid);
+                    var newList = ProcessManager.getCurrentProcesses();
+                    tableModel.refreshData(newList);
+                    JOptionPane.showMessageDialog(this, "Process killed: " + pid);
+
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(this, "Error killing process: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Please select a process to kill.", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+        });
         add(killButton);
 
 

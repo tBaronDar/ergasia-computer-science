@@ -4,12 +4,11 @@ import com.themisdarelis.processtool.ui.MainFrame;
 import javax.swing.UIManager;
 import java.awt.Font;
 import javax.swing.plaf.FontUIResource;
-import java.util.Enumeration;
 
 public class App
 {
     private static void setUIFont(FontUIResource font) {
-        Enumeration<?> keys = UIManager.getDefaults().keys();
+        var keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
             Object value = UIManager.get(key);
@@ -24,7 +23,6 @@ public class App
         // Set default font size for all Swing components
         FontUIResource font = new FontUIResource("SansSerif", Font.PLAIN, 24);
         setUIFont(font);
-
         new MainFrame();
     }
 }
