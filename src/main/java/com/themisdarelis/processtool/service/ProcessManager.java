@@ -18,18 +18,19 @@ public class ProcessManager {
     }
   }
 
-  public static void startProcess(String command) throws Exception {
+  private static Process executeCommand(String command) throws Exception {
     ProcessBuilder builder = new ProcessBuilder();
-    var osEnviroment = figureOutOSCommand();
-    builder.command(osEnviroment[0], osEnviroment[1], command.trim());
-    builder.start();
+    var osEnvironment = figureOutOSCommand();
+    builder.command(osEnvironment[0], osEnvironment[1], command.trim());
+    return builder.start();
+  }
+
+  public static void startProcess(String command) throws Exception {
+    executeCommand(command);
   }
 
   public static void killProcess(long pid) throws Exception {
-    var osEnviroment = figureOutOSCommand();
-    ProcessBuilder builder = new ProcessBuilder();
-    builder.command(osEnviroment[0] ,osEnviroment[1] , "kill " + pid);
-    builder.start();
+    executeCommand("kill " + pid);
   }
 
   public static void runNanoEditor(String filePath) throws Exception {

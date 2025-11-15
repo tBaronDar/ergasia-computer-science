@@ -21,7 +21,10 @@ public class MainPanel extends JPanel {
         processTable.setRowHeight(32);
         processTable.setRowSelectionAllowed(true);
         JScrollPane scrollPane = new JScrollPane(processTable);
-        this.add(scrollPane);
+        // me to pou valeis to scrollpane kane scroll down
+        //den douleuei auto....
+        SwingUtilities.invokeLater(() -> scrollToBottom(scrollPane));
+        add(scrollPane);
 
         var textInput= new JTextField();
         textInput.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
@@ -34,13 +37,14 @@ public class MainPanel extends JPanel {
                     textInput.setText("");
                     var newList = ProcessManager.getCurrentProcesses();
                     tableModel.refreshData(newList);
+                    SwingUtilities.invokeLater(() -> scrollToBottom(scrollPane));
                     JOptionPane.showMessageDialog(this, "Process started: " + input);
 
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(this, "Error starting process: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Please enter a command to start.", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please the name of a gui program.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         });
         add(startButton);
@@ -56,19 +60,23 @@ public class MainPanel extends JPanel {
                     ProcessManager.killProcess(pid);
                     var newList = ProcessManager.getCurrentProcesses();
                     tableModel.refreshData(newList);
+                    SwingUtilities.invokeLater(() -> scrollToBottom(scrollPane));
                     JOptionPane.showMessageDialog(this, "Process killed: " + pid);
 
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(this, "Error killing process: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Please select a process to kill.", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please select a program from the list.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         });
         add(killButton);
 
+    }
 
-
+    private void scrollToBottom(JScrollPane scrollPane) {
+        JScrollBar verticalBar = scrollPane.getVerticalScrollBar();
+        verticalBar.setValue(verticalBar.getMaximum());
     }
 
 }
