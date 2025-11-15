@@ -10,7 +10,7 @@
 
 Η λιστα αυτη χρεισημοποιειτε απο το [ProcessInfoTableModel](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/ProcessInfoTableModel.java) για την δημιουργια ενος μοντελου πινακα και τελος το μοντελο αυτο απεικονιζεται με ως **JTable** στο [MainPanel](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainPanel.java).
 
-Στο MainPanel προσθετονται και αλλα "J" στοιχεια(κουμπια, labels, input κτλ). Το πανελ αυτο ειναι το μοναδικο πανελ της εφαρμαγής και ειναι η 'εισοδος' τους κεντρικου **JFrame**(δηλαδη παραθυρου) με ονομα [MainFrame](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainFrame.java).
+Στο MainPanel προσθετονται και αλλα _"J"_ στοιχεια(κουμπια, labels, input κτλ). Το πανελ αυτο ειναι το μοναδικο πανελ της εφαρμαγής και ειναι η 'εισοδος' τους κεντρικου **JFrame**(δηλαδη παραθυρου) με ονομα [MainFrame](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainFrame.java).
 
 Οταν πατήσετε το κουμπί **Start Process** θα γινουν τα παρακάτω βήματα:
 
@@ -18,7 +18,7 @@
 2. Θα καθαριστεί το κείμενο μεσα στο textInput
 3. Μια καινουργια λιστα διεργασιών θα δημιουργηθει
 4. Θα ανανεωθεί ο πινακας με την καινοθργια λιστα
-5. Η βοηθητική **scrollToBottom()** θα καλεστει μεσω του **SwingUtilities**.**invokeLater()**, για να γινει σκρολ στο τέλος του πινακα
+5. Η βοηθητική **scrollToBottom()** θα καλεστει μεσω του **SwingUtilities.invokeLater()**, για να γινει σκρολ στο τέλος του πινακα
 6. Ενα μηνυμα **JOptionPane.showMessageDialog()** θα δημιουργηθει.
 7. Θα επιλεχθει η τελευταια γραμμη του πινακα. Εκει βρισκεται η διεργασια που μολις ξεκινησαμε.
 
@@ -29,7 +29,7 @@
 3. Θα τρεξει η μεθοδος **ProcessManager.killProcess()** με ορισμα το pid
 4. Μια καινουργια λιστα διεργασιών θα δημιουργηθει
 5. Θα ανανεωθεί ο πινακας με την καινουργια λιστα
-6. Η βοηθητική **scrollToBottom()** θα καλεστει μεσω του **SwingUtilities**.**invokeLater()**, για να γινει σκρολ στο τέλος του πινακα
+6. Η βοηθητική **scrollToBottom()** θα καλεστει μεσω του **SwingUtilities.invokeLater()**, για να γινει σκρολ στο τέλος του πινακα
 7. Ενα μηνυμα **JOptionPane.showMessageDialog()** θα δημιουργηθει.
 
 ## Τι λειπει
