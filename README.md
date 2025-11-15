@@ -5,7 +5,7 @@
 Εχω συμπεριλαβει το τελικο .jar στον φάκελο executable.
 
 ```bash
-java -jar target/processtool.jar
+java -jar executable/processtool.jar
 ```
 
 ## Για να κανετε compile και package:
