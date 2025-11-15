@@ -40,7 +40,7 @@ public class MainPanel extends JPanel {
         descLine2.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         // GitHub link label
-        JLabel githubLabel = new JLabel("GitHub: https://github.com/tBaronDar/ergsia-computer-science");
+        JLabel githubLabel = new JLabel("GitHub: https://github.com/tBaronDar/ergasia-computer-science");
         githubLabel.setForeground(Color.BLUE);
         githubLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
         githubLabel.setFont(githubLabel.getFont().deriveFont(14f));
@@ -50,7 +50,7 @@ public class MainPanel extends JPanel {
             public void mouseClicked(java.awt.event.MouseEvent e) {
                 try {
                     if (Desktop.isDesktopSupported()) {
-                        Desktop.getDesktop().browse(new URI("https://github.com/tBaronDar/ergsia-computer-science"));
+                        Desktop.getDesktop().browse(new URI("https://github.com/tBaronDar/ergasia-computer-science"));
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();

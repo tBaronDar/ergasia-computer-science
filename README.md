@@ -40,4 +40,4 @@ java -jar target/processtool-0.2.jar
 
 **Προσοχη** στο "-0.2" η εκδοση μπορει να αλλαξει. Δειτε μέσα στο /target για το ακριβές όνομα.
 
-Η περιγραφη της εφαρμογής βρισκεται [εδώ](https://github.com/tBaronDar/ergsia-computer-science/blob/main/ergasia-doc.md).
+Η περιγραφη της εφαρμογής βρισκεται [εδώ](https://github.com/tBaronDar/ergasia-computer-science/blob/main/ergasia-doc.md).

@@ -6,11 +6,11 @@
 
 ## Περιγραφη
 
-Στην κλασση [ProcessManager](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/service/ProcessManager.java), το εργαλειο που κανει το μεγαλυτερο μέρος της δουλειας, ειναι το [ProcessBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html). Το οποιο ξεκιναει και σταματει τα processes στην κονσολα(shell) του λειτουργικου. Επειτα με το **HandleProcess** δημιουργω μια λιστα τυπου [ProcessInfo](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/model/ProcessInfo.java).
+Στην κλασση [ProcessManager](https://github.com/tBaronDar/ergasia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/service/ProcessManager.java), το εργαλειο που κανει το μεγαλυτερο μέρος της δουλειας, ειναι το [ProcessBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html). Το οποιο ξεκιναει και σταματει τα processes στην κονσολα(shell) του λειτουργικου. Επειτα με το **HandleProcess** δημιουργω μια λιστα τυπου [ProcessInfo](https://github.com/tBaronDar/ergasia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/model/ProcessInfo.java).
 
-Η λιστα αυτη χρεισημοποιειτε απο το [ProcessInfoTableModel](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/ProcessInfoTableModel.java) για την δημιουργια ενος μοντελου πινακα και τελος το μοντελο αυτο απεικονιζεται με ως **JTable** στο [MainPanel](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainPanel.java).
+Η λιστα αυτη χρεισημοποιειτε απο το [ProcessInfoTableModel](https://github.com/tBaronDar/ergasia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/ProcessInfoTableModel.java) για την δημιουργια ενος μοντελου πινακα και τελος το μοντελο αυτο απεικονιζεται με ως **JTable** στο [MainPanel](https://github.com/tBaronDar/ergasia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainPanel.java).
 
-Στο MainPanel προσθετονται και αλλα _"J"_ στοιχεια(κουμπια, labels, input κτλ). Το πανελ αυτο ειναι το μοναδικο πανελ της εφαρμαγής και ειναι η 'εισοδος' τους κεντρικου **JFrame**(δηλαδη παραθυρου) με ονομα [MainFrame](https://github.com/tBaronDar/ergsia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainFrame.java).
+Στο MainPanel προσθετονται και αλλα _"J"_ στοιχεια(κουμπια, labels, input κτλ). Το πανελ αυτο ειναι το μοναδικο πανελ της εφαρμαγής και ειναι η 'εισοδος' τους κεντρικου **JFrame**(δηλαδη παραθυρου) με ονομα [MainFrame](https://github.com/tBaronDar/ergasia-computer-science/blob/main/src/main/java/com/themisdarelis/processtool/ui/MainFrame.java).
 
 Οταν πατήσετε το κουμπί **Start Process** θα γινουν τα παρακάτω βήματα:
 
