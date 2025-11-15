@@ -32,7 +32,7 @@ public class MainPanel extends JPanel {
         descLine1.setWrapStyleWord(true);
         descLine1.setEditable(false);
         descLine1.setOpaque(false);
-        descLine1.setFont(descLine1.getFont().deriveFont(20f));
+        descLine1.setFont(descLine1.getFont().deriveFont(18f));
         descLine1.setAlignmentX(Component.LEFT_ALIGNMENT);
         descLine1.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 
@@ -106,12 +106,10 @@ public class MainPanel extends JPanel {
         row1.add(killButton);
 
         JPanel row2 = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
-        var refreshPlaceholder = new JButton("Refresh");
-        refreshPlaceholder.setEnabled(false);
-        var exitPlaceholder = new JButton("Exit");
-        exitPlaceholder.setEnabled(false);
-        row2.add(refreshPlaceholder);
-        row2.add(exitPlaceholder);
+        var refreshButton = new JButton("Refresh");
+        var exitButton = new JButton("Exit");
+        row2.add(refreshButton);
+        row2.add(exitButton);
 
         buttonRows.add(row1);
         buttonRows.add(row2);
@@ -176,8 +174,18 @@ public class MainPanel extends JPanel {
             }
         });
 
+        refreshButton.addActionListener(e -> {  
+            var newList = ProcessManager.getCurrentProcesses();
+            tableModel.refreshData(newList);
+            SwingUtilities.invokeLater(() -> scrollToBottom(scrollPane));
+        });
+
+        exitButton.addActionListener(e -> {
+            System.exit(0);
+        });
     }
 
+    // kane scroll sto telos tou pinaka
     private void scrollToBottom(JScrollPane scrollPane) {
         JScrollBar verticalBar = scrollPane.getVerticalScrollBar();
         verticalBar.setValue(verticalBar.getMaximum());

@@ -33,14 +33,6 @@ public class ProcessManager {
     executeCommand("kill " + pid);
   }
 
-  public static void runNanoEditor(String filePath) throws Exception {
-    ProcessBuilder builder = new ProcessBuilder();
-    builder.command("sh", "-c", "nano " + filePath);
-    builder.inheritIO();
-    Process process = builder.start();
-    process.waitFor();
-  }
-
   public static ArrayList<ProcessInfo> getCurrentProcesses(){
     ArrayList<ProcessInfo> processList = new ArrayList<>();
     //παρε τα προσεσις
